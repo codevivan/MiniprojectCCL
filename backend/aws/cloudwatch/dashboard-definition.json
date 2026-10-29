@@ -1,0 +1,65 @@
+{
+  "widgets": [
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "AWS/ApplicationELB", "RequestCount", "LoadBalancer", "app/campusbite-alb/12345678" ],
+          [ ".", "TargetResponseTime", ".", "." ]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "eu-north-1",
+        "title": "EC2 Ingress Requests & Response Latency"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 12,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "AWS/DynamoDB", "ConsumedReadCapacityUnits", "TableName", "CampusBite_Orders" ],
+          [ ".", "ConsumedWriteCapacityUnits", ".", "." ]
+        ],
+        "view": "timeSeries",
+        "region": "eu-north-1",
+        "title": "DynamoDB Consumed Capacity (Orders Table)"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 6,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "AWS/Lambda", "Invocations", "FunctionName", "CampusBite_OrderNotification" ],
+          [ ".", "Errors", ".", "." ]
+        ],
+        "view": "timeSeries",
+        "region": "eu-north-1",
+        "title": "Lambda Notification Invocations & Errors"
+      }
+    },
+    {
+      "type": "log",
+      "x": 12,
+      "y": 6,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "query": "SOURCE '/campusbite/backend-api' | fields @timestamp, level, message, meta.method, meta.url, meta.statusCode | sort @timestamp desc | limit 25",
+        "region": "eu-north-1",
+        "title": "Recent Backend API Logs & Errors"
+      }
+    }
+  ]
+}

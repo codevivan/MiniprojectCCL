@@ -1,0 +1,58 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CampusBiteDynamoDBAccess",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:DescribeTable"
+      ],
+      "Resource": [
+        "arn:aws:dynamodb:eu-north-1:*:table/CampusBite_*",
+        "arn:aws:dynamodb:eu-north-1:*:table/CampusBite_*/index/*"
+      ]
+    },
+    {
+      "Sid": "CampusBiteS3AssetStorage",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation",
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:DeleteObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::campusbite-food-images-2026",
+        "arn:aws:s3:::campusbite-food-images-2026/*"
+      ]
+    },
+    {
+      "Sid": "CampusBiteLambdaNotificationInvoke",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:InvokeFunction"
+      ],
+      "Resource": "arn:aws:lambda:eu-north-1:*:function:CampusBite_OrderNotification"
+    },
+    {
+      "Sid": "CampusBiteCloudWatchLogging",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "logs:DescribeLogStreams"
+      ],
+      "Resource": "arn:aws:logs:eu-north-1:*:log-group:/campusbite/*"
+    }
+  ]
+}

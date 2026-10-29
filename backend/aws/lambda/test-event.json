@@ -1,0 +1,13 @@
+{
+  "eventType": "ORDER_CREATED",
+  "orderId": "ord_ccl_demo_001",
+  "tokenNumber": "CB-101",
+  "studentId": "std_101",
+  "studentName": "Rahul Sharma",
+  "studentEmail": "rahul.sharma@college.edu",
+  "totalAmount": 160,
+  "itemCount": 2,
+  "paymentMethod": "UPI",
+  "paymentStatus": "PAID",
+  "timestamp": "2026-10-28T12:00:00.000Z"
+}

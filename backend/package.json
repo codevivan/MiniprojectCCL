@@ -1,0 +1,52 @@
+{
+  "name": "campusbite-backend",
+  "version": "1.0.0",
+  "description": "CampusBite - Cloud-Based Canteen Pre-Order & Token Management System Backend (AWS Ready)",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node src/scripts/seedData.js",
+    "create-tables": "node src/scripts/createTables.js",
+    "reset-owner": "node src/scripts/resetOwner.js",
+    "test": "node --test tests/**/*.test.js"
+  },
+  "keywords": [
+    "canteen",
+    "ccl",
+    "aws",
+    "dynamodb",
+    "express",
+    "socketio",
+    "cognito"
+  ],
+  "author": "CampusBite Team",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-cloudwatch": "^3.1159.0",
+    "@aws-sdk/client-cloudwatch-logs": "^3.750.0",
+    "@aws-sdk/client-dynamodb": "^3.750.0",
+    "@aws-sdk/client-lambda": "^3.750.0",
+    "@aws-sdk/client-s3": "^3.750.0",
+    "@aws-sdk/client-sns": "^3.1159.0",
+    "@aws-sdk/lib-dynamodb": "^3.750.0",
+    "@aws-sdk/s3-request-presigner": "^3.750.0",
+    "aws-jwt-verify": "^4.0.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.8.1",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.1159.0",
+    "@aws-sdk/client-ec2": "^3.1159.0",
+    "@aws-sdk/client-iam": "^3.1159.0",
+    "@aws-sdk/client-ssm": "^3.1159.0",
+    "@aws-sdk/lib-storage": "^3.1159.0"
+  }
+}

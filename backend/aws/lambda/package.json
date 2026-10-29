@@ -1,0 +1,7 @@
+{
+  "name": "campusbite-lambda-notification",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "orderNotification.js",
+  "description": "CampusBite Order Notification Background Task"
+}
